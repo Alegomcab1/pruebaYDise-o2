@@ -14,7 +14,7 @@
 <%@taglib prefix="security" uri="http://www.springframework.org/security/tags"%>
 
 <div>
-	<a href="#"><img src="images/logo.png" alt="Acme-Handy-Worker Co., Inc." /></a>
+	<a href="#"><img src="images/Fondo_log.png" height= 180px width= 700px alt="Acme-Handy-Worker Co., Inc." /></a>
 </div>
 
 <div>
@@ -34,10 +34,17 @@
 			<li><a class="fNiv"><spring:message	code="master.page.customer" /></a>
 				<ul>
 					<li class="arrow"></li>
-					<li><a href="customer/action-1.do"><spring:message code="master.page.customer.action.1" /></a></li>
-					<li><a href="customer/action-2.do"><spring:message code="master.page.customer.action.2" /></a></li>					
+					<li><a href="services/general-services.do"><spring:message code="master.page.customer.action.1" /></a></li>
+					<li><a href="services/repairs.do"><spring:message code="master.page.customer.action.2" /></a></li>
+					<li><a href="services/installations.do"><spring:message code="master.page.customer.action.3" /></a></li>
+					<li><a href="services/outdoor-services.do"><spring:message code="master.page.customer.action.4" /></a></li>					
+					<li><a href="services/indoor-services.do"><spring:message code="master.page.customer.action.5" /></a></li>
+					
+													
 				</ul>
 			</li>
+					
+			
 		</security:authorize>
 		
 		<security:authorize access="isAnonymous()">
