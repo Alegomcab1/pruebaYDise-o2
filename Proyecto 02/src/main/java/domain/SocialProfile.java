@@ -19,7 +19,6 @@ public class SocialProfile extends DomainEntity {
 		return this.nick;
 	}
 
-	@NotBlank
 	public void setNick(final String nick) {
 		this.nick = nick;
 	}
@@ -29,7 +28,6 @@ public class SocialProfile extends DomainEntity {
 		return this.name;
 	}
 
-	@NotBlank
 	public void setName(final String name) {
 		this.name = name;
 	}
@@ -40,8 +38,6 @@ public class SocialProfile extends DomainEntity {
 		return this.profileLink;
 	}
 
-	@NotBlank
-	@URL
 	public void setProfileLink(final String profileLink) {
 		this.profileLink = profileLink;
 	}

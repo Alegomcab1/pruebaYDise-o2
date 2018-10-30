@@ -21,7 +21,6 @@ public class Warranty extends DomainEntity {
 		return this.title;
 	}
 
-	@NotBlank
 	public void setTitle(final String title) {
 		this.title = title;
 	}
@@ -31,7 +30,6 @@ public class Warranty extends DomainEntity {
 		return this.terms;
 	}
 
-	@Valid
 	public void setTerms(final List<String> terms) {
 		this.terms = terms;
 	}
@@ -41,7 +39,6 @@ public class Warranty extends DomainEntity {
 		return this.laws;
 	}
 
-	@Valid
 	public void setLaws(final List<String> laws) {
 		this.laws = laws;
 	}

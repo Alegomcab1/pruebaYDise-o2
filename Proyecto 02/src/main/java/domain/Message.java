@@ -20,6 +20,10 @@ public class Message {
 	private String			body;
 	private Priority		priority;
 	private List<String>	tags;
+
+	private Actor			sender;
+	private List<Actor>		receivers;
+
 	private List<Box>		box;
 
 
@@ -28,7 +32,6 @@ public class Message {
 		return this.moment;
 	}
 
-	@Past
 	public void setMoment(final Date moment) {
 		this.moment = moment;
 	}
@@ -38,7 +41,6 @@ public class Message {
 		return this.subject;
 	}
 
-	@NotBlank
 	public void setSubject(final String subject) {
 		this.subject = subject;
 	}
@@ -48,7 +50,6 @@ public class Message {
 		return this.body;
 	}
 
-	@NotBlank
 	public void setBody(final String body) {
 		this.body = body;
 	}
@@ -58,7 +59,6 @@ public class Message {
 		return this.priority;
 	}
 
-	@NotNull
 	public void setPriority(final Priority priority) {
 		this.priority = priority;
 	}
@@ -77,9 +77,26 @@ public class Message {
 		return this.box;
 	}
 
-	@Valid
 	public void setBox(final List<Box> box) {
 		this.box = box;
+	}
+
+	@NotNull
+	public Actor getSender() {
+		return this.sender;
+	}
+
+	public void setSender(final Actor sender) {
+		this.sender = sender;
+	}
+
+	@NotBlank
+	public List<Actor> getReceivers() {
+		return this.receivers;
+	}
+
+	public void setReceivers(final List<Actor> receivers) {
+		this.receivers = receivers;
 	}
 
 }

@@ -25,7 +25,6 @@ public class EndorserRecord extends DomainEntity {
 		return this.fullName;
 	}
 
-	@NotBlank
 	public void setFullName(final String fullName) {
 		this.fullName = fullName;
 	}
@@ -36,8 +35,6 @@ public class EndorserRecord extends DomainEntity {
 		return this.email;
 	}
 
-	@NotBlank
-	@Email
 	public void setEmail(final String email) {
 		this.email = email;
 	}
@@ -47,7 +44,6 @@ public class EndorserRecord extends DomainEntity {
 		return this.phoneNumber;
 	}
 
-	@NotBlank
 	public void setPhoneNumber(final String phoneNumber) {
 		this.phoneNumber = phoneNumber;
 	}
@@ -58,8 +54,6 @@ public class EndorserRecord extends DomainEntity {
 		return this.linkLinkedInProfile;
 	}
 
-	@NotBlank
-	@URL
 	public void setLinkLinkedInProfile(final String linkLinkedInProfile) {
 		this.linkLinkedInProfile = linkLinkedInProfile;
 	}
@@ -69,7 +63,6 @@ public class EndorserRecord extends DomainEntity {
 		return this.comments;
 	}
 
-	@Valid
 	public void setComments(final List<String> comments) {
 		this.comments = comments;
 	}

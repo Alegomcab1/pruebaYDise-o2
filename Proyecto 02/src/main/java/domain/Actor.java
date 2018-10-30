@@ -20,6 +20,8 @@ public class Actor extends DomainEntity {
 	private String				email;
 	private String				phoneNumber;
 	private String				address;
+
+	//Dependencias
 	private List<SocialProfile>	socialProfiles;
 	private List<Box>			boxes;
 
@@ -29,7 +31,6 @@ public class Actor extends DomainEntity {
 		return this.boxes;
 	}
 
-	@Valid
 	public void setBoxes(final List<Box> boxes) {
 		this.boxes = boxes;
 	}
@@ -39,7 +40,6 @@ public class Actor extends DomainEntity {
 		return this.socialProfiles;
 	}
 
-	@Valid
 	public void setSocialProfiles(final List<SocialProfile> socialProfiles) {
 		this.socialProfiles = socialProfiles;
 	}
@@ -49,7 +49,6 @@ public class Actor extends DomainEntity {
 		return this.name;
 	}
 
-	@NotBlank
 	public void setName(final String name) {
 		this.name = name;
 	}
@@ -58,7 +57,7 @@ public class Actor extends DomainEntity {
 	public String getMiddleName() {
 		return this.middleName;
 	}
-	@Valid
+
 	public void setMiddleName(final String middleName) {
 		this.middleName = middleName;
 	}
@@ -68,7 +67,6 @@ public class Actor extends DomainEntity {
 		return this.surname;
 	}
 
-	@NotBlank
 	public void setSurname(final String surname) {
 		this.surname = surname;
 	}
@@ -78,7 +76,6 @@ public class Actor extends DomainEntity {
 		return this.photo;
 	}
 
-	@URL
 	public void setPhoto(final String photo) {
 		this.photo = photo;
 	}
@@ -89,8 +86,6 @@ public class Actor extends DomainEntity {
 		return this.email;
 	}
 
-	@NotBlank
-	@Email
 	public void setEmail(final String email) {
 		this.email = email;
 	}
@@ -100,7 +95,6 @@ public class Actor extends DomainEntity {
 		return this.phoneNumber;
 	}
 
-	@Valid
 	public void setPhoneNumber(final String phoneNumber) {
 		this.phoneNumber = phoneNumber;
 	}
@@ -110,7 +104,6 @@ public class Actor extends DomainEntity {
 		return this.address;
 	}
 
-	@Valid
 	public void setAddress(final String address) {
 		this.address = address;
 	}

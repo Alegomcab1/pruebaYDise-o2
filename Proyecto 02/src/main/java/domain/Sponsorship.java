@@ -1,10 +1,8 @@
 
 package domain;
 
-import java.util.List;
-
 import javax.persistence.Entity;
-import javax.validation.Valid;
+import javax.validation.constraints.NotNull;
 
 import org.hibernate.validator.constraints.NotBlank;
 import org.hibernate.validator.constraints.URL;
@@ -12,9 +10,10 @@ import org.hibernate.validator.constraints.URL;
 @Entity
 public class Sponsorship {
 
-	private String			bannerUrl;
-	private String			link;
-	private List<Tutorial>	tutoriales;
+	private String		bannerUrl;
+	private String		link;
+
+	private Tutorial	tutorials;
 
 
 	@URL
@@ -23,8 +22,6 @@ public class Sponsorship {
 		return this.bannerUrl;
 	}
 
-	@URL
-	@NotBlank
 	public void setBannerUrl(final String bannerUrl) {
 		this.bannerUrl = bannerUrl;
 	}
@@ -35,20 +32,17 @@ public class Sponsorship {
 		return this.link;
 	}
 
-	@URL
-	@NotBlank
 	public void setLink(final String link) {
 		this.link = link;
 	}
 
-	@Valid
-	public List<Tutorial> getTutoriales() {
-		return this.tutoriales;
+	@NotNull
+	public Tutorial getTutorials() {
+		return this.tutorials;
 	}
 
-	@Valid
-	public void setTutoriales(final List<Tutorial> tutoriales) {
-		this.tutoriales = tutoriales;
+	public void setTutorials(final Tutorial tutorials) {
+		this.tutorials = tutorials;
 	}
 
 }

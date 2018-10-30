@@ -4,12 +4,14 @@ package domain;
 import java.util.Date;
 import java.util.List;
 
+import javax.persistence.Entity;
 import javax.validation.Valid;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Past;
 
 import org.hibernate.validator.constraints.NotBlank;
 
+@Entity
 public class Note extends DomainEntity {
 
 	private Date			moment;
@@ -23,8 +25,6 @@ public class Note extends DomainEntity {
 		return this.moment;
 	}
 
-	@Past
-	@NotNull
 	public void setMoment(final Date moment) {
 		this.moment = moment;
 	}
@@ -34,7 +34,6 @@ public class Note extends DomainEntity {
 		return this.mandatoryComment;
 	}
 
-	@NotBlank
 	public void setMandatoryComment(final String mandatoryComment) {
 		this.mandatoryComment = mandatoryComment;
 	}
@@ -44,7 +43,6 @@ public class Note extends DomainEntity {
 		return this.optionalComments;
 	}
 
-	@Valid
 	public void setOptionalComments(final List<String> optionalComments) {
 		this.optionalComments = optionalComments;
 	}

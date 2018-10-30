@@ -14,16 +14,14 @@ import javax.validation.constraints.Past;
 @Entity
 public class Application extends DomainEntity {
 
-	private FixUpTask			fixUpTask;
 	private Date				moment;
 	private Status				status;
 	private double				offeredPrice;
 	private Collection<String>	comments;
 
+	private FixUpTask			fixUpTask;
+	private HandyWorker			handyWorker;
 
-	public Application() {
-		super();
-	}
 
 	@NotNull
 	public FixUpTask getFixUpTask() {
@@ -71,6 +69,15 @@ public class Application extends DomainEntity {
 
 	public void setComments(final Collection<String> comments) {
 		this.comments = comments;
+	}
+
+	@NotNull
+	public HandyWorker getHandyWorker() {
+		return this.handyWorker;
+	}
+
+	public void setHandyWorker(final HandyWorker handyWorker) {
+		this.handyWorker = handyWorker;
 	}
 
 }

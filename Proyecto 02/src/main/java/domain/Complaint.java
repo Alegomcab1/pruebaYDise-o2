@@ -4,12 +4,14 @@ package domain;
 import java.util.Date;
 import java.util.List;
 
+import javax.persistence.Entity;
 import javax.validation.Valid;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Past;
 
 import org.hibernate.validator.constraints.NotBlank;
 
+@Entity
 public class Complaint extends DomainEntity {
 
 	private String			ticker;
@@ -17,13 +19,14 @@ public class Complaint extends DomainEntity {
 	private String			description;
 	private List<String>	attachments;
 
+	private Referee			referee;
+
 
 	@NotBlank
 	public String getTicker() {
 		return this.ticker;
 	}
 
-	@NotBlank
 	public void setTicker(final String ticker) {
 		this.ticker = ticker;
 	}
@@ -34,8 +37,6 @@ public class Complaint extends DomainEntity {
 		return this.moment;
 	}
 
-	@Past
-	@NotNull
 	public void setMoment(final Date moment) {
 		this.moment = moment;
 	}
@@ -45,7 +46,6 @@ public class Complaint extends DomainEntity {
 		return this.description;
 	}
 
-	@NotBlank
 	public void setDescription(final String description) {
 		this.description = description;
 	}
@@ -55,9 +55,17 @@ public class Complaint extends DomainEntity {
 		return this.attachments;
 	}
 
-	@Valid
 	public void setAttachments(final List<String> attachments) {
 		this.attachments = attachments;
+	}
+
+	@NotNull
+	public Referee getReferee() {
+		return this.referee;
+	}
+
+	public void setReferee(final Referee referee) {
+		this.referee = referee;
 	}
 
 }

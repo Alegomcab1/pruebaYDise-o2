@@ -10,20 +10,14 @@ import javax.validation.Valid;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Past;
 
-import org.hibernate.validator.constraints.NotBlank;
-
 @Entity
 public class Endorsment extends DomainEntity {
 
 	private Date				moment;
 	private Collection<String>	comments;
-	private String				writtenBy;
-	private String				writtenTo;
+	private Endorser			writtenBy;
+	private Endorser			writtenTo;
 
-
-	public Endorsment() {
-		super();
-	}
 
 	@Past
 	@NotNull
@@ -44,21 +38,21 @@ public class Endorsment extends DomainEntity {
 		this.comments = comments;
 	}
 
-	@NotBlank
-	public String getWrittenBy() {
+	@NotNull
+	public Endorser getWrittenBy() {
 		return this.writtenBy;
 	}
 
-	public void setWrittenBy(final String writtenBy) {
+	public void setWrittenBy(final Endorser writtenBy) {
 		this.writtenBy = writtenBy;
 	}
 
-	@NotBlank
-	public String getWrittenTo() {
+	@NotNull
+	public Endorser getWrittenTo() {
 		return this.writtenTo;
 	}
 
-	public void setWrittenTo(final String writtenTo) {
+	public void setWrittenTo(final Endorser writtenTo) {
 		this.writtenTo = writtenTo;
 	}
 

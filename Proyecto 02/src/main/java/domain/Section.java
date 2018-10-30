@@ -4,6 +4,7 @@ package domain;
 import java.util.List;
 
 import javax.persistence.Entity;
+import javax.validation.constraints.Min;
 import javax.validation.constraints.NotNull;
 
 import org.hibernate.validator.constraints.NotBlank;
@@ -23,7 +24,6 @@ public class Section {
 		return this.sectionTitle;
 	}
 
-	@NotBlank
 	public void setSectionTitle(final String sectionTitle) {
 		this.sectionTitle = sectionTitle;
 	}
@@ -33,7 +33,6 @@ public class Section {
 		return this.text;
 	}
 
-	@NotBlank
 	public void setText(final String text) {
 		this.text = text;
 	}
@@ -43,17 +42,16 @@ public class Section {
 		return this.sectionPictures;
 	}
 
-	@URL
 	public void setSectionPictures(final List<String> sectionPictures) {
 		this.sectionPictures = sectionPictures;
 	}
 
+	@Min(0)
 	@NotNull
 	public int getNumber() {
 		return this.number;
 	}
 
-	@NotNull
 	public void setNumber(final int number) {
 		this.number = number;
 	}
