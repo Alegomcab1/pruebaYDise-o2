@@ -1,0 +1,61 @@
+
+package domain;
+
+import java.util.List;
+
+import javax.persistence.Entity;
+import javax.validation.Valid;
+import javax.validation.constraints.NotNull;
+
+import org.hibernate.validator.constraints.NotBlank;
+
+@Entity
+public class Box extends DomainEntity {
+
+	private String			name;
+	private Boolean			isSystem;
+	private Box				fatherBox;
+	private List<Message>	messages;
+
+
+	@Valid
+	public List<Message> getMessages() {
+		return this.messages;
+	}
+
+	@Valid
+	public void setMessages(final List<Message> messages) {
+		this.messages = messages;
+	}
+
+	@Valid
+	public Box getFatherBox() {
+		return this.fatherBox;
+	}
+
+	@Valid
+	public void setFatherBox(final Box fatherBox) {
+		this.fatherBox = fatherBox;
+	}
+
+	@NotBlank
+	public String getName() {
+		return this.name;
+	}
+
+	@NotBlank
+	public void setName(final String name) {
+		this.name = name;
+	}
+
+	@NotNull
+	public Boolean getIsSystem() {
+		return this.isSystem;
+	}
+
+	@NotNull
+	public void setIsSystem(final Boolean isSystem) {
+		this.isSystem = isSystem;
+	}
+
+}
