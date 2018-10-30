@@ -13,10 +13,6 @@ public class Category extends DomainEntity {
 	private String			name;
 
 
-	public Category() {
-		super();
-	}
-
 	@Valid
 	public List<Category> getSubCategorys() {
 		return this.subCategorys;
