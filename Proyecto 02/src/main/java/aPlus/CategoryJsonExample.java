@@ -53,14 +53,22 @@ public class CategoryJsonExample {
 
 		final Category category = new Category();
 
-		category.setName("Chapuzas");
-
+		category.setName("Botched Job");
 		final List<Category> subCategorys = new ArrayList<>();
 
 		final Category subCategory = new Category();
-		subCategory.setName("Manuales");
-		subCategory.setSubCategorys(new ArrayList<Category>());
+		final Category subCategory2 = new Category();
+
+		subCategory.setName("Manuals");
+		subCategory2.setName("Digitals");
+
+		final List<Category> subCategorys2 = new ArrayList<>();
+
+		subCategory.setSubCategorys(subCategorys2);
+		subCategory2.setSubCategorys(subCategorys2);
+
 		subCategorys.add(subCategory);
+		subCategorys.add(subCategory2);
 
 		category.setSubCategorys(subCategorys);
 
