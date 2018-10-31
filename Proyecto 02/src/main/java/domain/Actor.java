@@ -26,6 +26,10 @@ public class Actor extends DomainEntity {
 	private List<Box>			boxes;
 
 
+	public Actor() {		//Created for Json purposes
+		super();
+	}
+
 	@Valid
 	public List<Box> getBoxes() {
 		return this.boxes;

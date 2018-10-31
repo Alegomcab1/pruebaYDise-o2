@@ -5,7 +5,6 @@ import java.util.Date;
 import java.util.List;
 
 import javax.persistence.Entity;
-import javax.swing.Box;
 import javax.validation.Valid;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Past;
@@ -24,8 +23,10 @@ public class Message {
 	private Actor			sender;
 	private List<Actor>		receivers;
 
-	private List<Box>		box;
 
+	public Message() {		//For Json purposes
+		super();
+	}
 
 	@Past
 	public Date getMoment() {
@@ -70,15 +71,6 @@ public class Message {
 
 	public void setTags(final List<String> tags) {
 		this.tags = tags;
-	}
-
-	@Valid
-	public List<Box> getBox() {
-		return this.box;
-	}
-
-	public void setBox(final List<Box> box) {
-		this.box = box;
 	}
 
 	@NotNull
