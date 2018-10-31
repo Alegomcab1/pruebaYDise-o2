@@ -15,7 +15,7 @@ public class Category extends DomainEntity {
 	private String			name;
 
 
-	public Category() {
+	public Category() {		//Created for Json purposes
 		super();
 	}
 

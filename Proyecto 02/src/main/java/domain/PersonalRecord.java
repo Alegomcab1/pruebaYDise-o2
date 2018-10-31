@@ -17,6 +17,10 @@ public class PersonalRecord extends DomainEntity {
 	private String	urlLinkedInProfile;
 
 
+	public PersonalRecord() {		//Created for Json purposes
+		super();
+	}
+
 	@NotBlank
 	public String getFullName() {
 		return this.fullName;

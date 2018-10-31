@@ -17,8 +17,12 @@ public class Curriculum extends DomainEntity {
 	private List<MiscellaneousRecord>	miscellaneousRecords;
 	private List<EducationRecord>		educationRecords;
 	private List<ProfessionalRecord>	professionalRecords;
-	private PersonalRecord				personalRecords;
+	private PersonalRecord				personalRecord;
 
+
+	public Curriculum() {		//Created for Json purposes
+		super();
+	}
 
 	@NotBlank
 	public String getTicker() {
@@ -66,12 +70,12 @@ public class Curriculum extends DomainEntity {
 	}
 
 	@NotBlank
-	public PersonalRecord getPersonalRecords() {
-		return this.personalRecords;
+	public PersonalRecord getPersonalRecord() {
+		return this.personalRecord;
 	}
 
-	public void setPersonalRecords(final PersonalRecord personalRecords) {
-		this.personalRecords = personalRecords;
+	public void setPersonalRecord(final PersonalRecord personalRecords) {
+		this.personalRecord = personalRecords;
 	}
 
 }
