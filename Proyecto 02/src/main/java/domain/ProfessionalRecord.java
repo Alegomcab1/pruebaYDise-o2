@@ -20,6 +20,7 @@ public class ProfessionalRecord extends DomainEntity {
 	private Date			endDate;
 	private String			role;
 	private String			url;
+
 	private List<String>	comments;
 
 
@@ -28,7 +29,6 @@ public class ProfessionalRecord extends DomainEntity {
 		return this.nameCompany;
 	}
 
-	@NotBlank
 	public void setNameCompany(final String nameCompany) {
 		this.nameCompany = nameCompany;
 	}
@@ -39,8 +39,6 @@ public class ProfessionalRecord extends DomainEntity {
 		return this.startDate;
 	}
 
-	@Past
-	@NotNull
 	public void setStartDate(final Date startDate) {
 		this.startDate = startDate;
 	}
@@ -50,7 +48,6 @@ public class ProfessionalRecord extends DomainEntity {
 		return this.endDate;
 	}
 
-	@Past
 	public void setEndDate(final Date endDate) {
 		this.endDate = endDate;
 	}
@@ -60,7 +57,6 @@ public class ProfessionalRecord extends DomainEntity {
 		return this.role;
 	}
 
-	@NotBlank
 	public void setRole(final String role) {
 		this.role = role;
 	}
@@ -70,7 +66,6 @@ public class ProfessionalRecord extends DomainEntity {
 		return this.url;
 	}
 
-	@URL
 	public void setUrl(final String url) {
 		this.url = url;
 	}
@@ -80,7 +75,6 @@ public class ProfessionalRecord extends DomainEntity {
 		return this.comments;
 	}
 
-	@Valid
 	public void setComments(final List<String> comments) {
 		this.comments = comments;
 	}

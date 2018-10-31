@@ -3,8 +3,6 @@ package domain;
 
 import java.util.Collection;
 import java.util.Date;
-import java.util.List;
-import java.util.Set;
 
 import javax.persistence.Entity;
 import javax.validation.Valid;
@@ -19,11 +17,6 @@ import org.hibernate.validator.constraints.NotBlank;
 @Entity
 public class FixUpTask extends DomainEntity {
 
-	public FixUpTask() {
-
-	}
-
-
 	private String					ticket;
 	private Date					momentPublished;
 	private String					description;
@@ -31,6 +24,7 @@ public class FixUpTask extends DomainEntity {
 	private double					maxPrice;
 	private Duration				realizationTime;
 
+	private Application				application;
 	private Collection<Category>	categories;
 	private Collection<Phase>		phases;
 	private Collection<Warranty>	warranties;
@@ -38,7 +32,7 @@ public class FixUpTask extends DomainEntity {
 
 
 	@NotBlank
-	@Pattern(regexp = "yymmdd_xxxxxx")
+	@Pattern(regexp = "[0-9]{2}[0-1]{1}[0-2]{1}[0-9]{2}(_[A-Za-z0-9]{6})")
 	public String getTicket() {
 		return this.ticket;
 	}
@@ -76,7 +70,7 @@ public class FixUpTask extends DomainEntity {
 
 	@NotNull
 	@Min(0)
-	@Digits(fraction = 2, integer = 7)
+	@Digits(fraction = 2, integer = 9)
 	public double getMaxPrice() {
 		return this.maxPrice;
 	}
@@ -94,12 +88,21 @@ public class FixUpTask extends DomainEntity {
 		this.realizationTime = realizationTime;
 	}
 
-	@Valid
+	@NotNull
+	public Application getApplication() {
+		return this.application;
+	}
+
+	public void setApplication(final Application application) {
+		this.application = application;
+	}
+
+	@NotBlank
 	public Collection<Category> getCategories() {
 		return this.categories;
 	}
 
-	public void setCategories(final List<Category> categories) {
+	public void setCategories(final Collection<Category> categories) {
 		this.categories = categories;
 	}
 
@@ -108,16 +111,16 @@ public class FixUpTask extends DomainEntity {
 		return this.phases;
 	}
 
-	public void setPhases(final List<Phase> phases) {
+	public void setPhases(final Collection<Phase> phases) {
 		this.phases = phases;
 	}
 
-	@Valid
+	@NotBlank
 	public Collection<Warranty> getWarranties() {
 		return this.warranties;
 	}
 
-	public void setWarranties(final List<Warranty> warranties) {
+	public void setWarranties(final Collection<Warranty> warranties) {
 		this.warranties = warranties;
 	}
 
@@ -126,7 +129,7 @@ public class FixUpTask extends DomainEntity {
 		return this.complaints;
 	}
 
-	public void setComplaints(final Set<Complaint> complaints) {
+	public void setComplaints(final Collection<Complaint> complaints) {
 		this.complaints = complaints;
 	}
 

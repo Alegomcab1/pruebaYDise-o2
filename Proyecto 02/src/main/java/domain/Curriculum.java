@@ -12,6 +12,7 @@ import org.hibernate.validator.constraints.NotBlank;
 public class Curriculum extends DomainEntity {
 
 	private String						ticker;
+
 	private List<EndorserRecord>		endorserRecords;
 	private List<MiscellaneousRecord>	miscellaneousRecords;
 	private List<EducationRecord>		educationRecords;
@@ -24,7 +25,6 @@ public class Curriculum extends DomainEntity {
 		return this.ticker;
 	}
 
-	@NotBlank
 	public void setTicker(final String ticker) {
 		this.ticker = ticker;
 	}
@@ -34,7 +34,6 @@ public class Curriculum extends DomainEntity {
 		return this.endorserRecords;
 	}
 
-	@Valid
 	public void setEndorserRecords(final List<EndorserRecord> endorserRecords) {
 		this.endorserRecords = endorserRecords;
 	}
@@ -44,7 +43,6 @@ public class Curriculum extends DomainEntity {
 		return this.miscellaneousRecords;
 	}
 
-	@Valid
 	public void setMiscellaneousRecords(final List<MiscellaneousRecord> miscellaneousRecords) {
 		this.miscellaneousRecords = miscellaneousRecords;
 	}
@@ -54,7 +52,6 @@ public class Curriculum extends DomainEntity {
 		return this.educationRecords;
 	}
 
-	@Valid
 	public void setEducationRecords(final List<EducationRecord> educationRecords) {
 		this.educationRecords = educationRecords;
 	}
@@ -64,7 +61,6 @@ public class Curriculum extends DomainEntity {
 		return this.professionalRecords;
 	}
 
-	@Valid
 	public void setProfessionalRecords(final List<ProfessionalRecord> professionalRecords) {
 		this.professionalRecords = professionalRecords;
 	}
@@ -74,7 +70,6 @@ public class Curriculum extends DomainEntity {
 		return this.personalRecords;
 	}
 
-	@NotBlank
 	public void setPersonalRecords(final PersonalRecord personalRecords) {
 		this.personalRecords = personalRecords;
 	}

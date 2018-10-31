@@ -28,7 +28,6 @@ public class EducationRecord extends DomainEntity {
 		return this.title;
 	}
 
-	@NotBlank
 	public void setTitle(final String title) {
 		this.title = title;
 	}
@@ -39,8 +38,6 @@ public class EducationRecord extends DomainEntity {
 		return this.startDateStudy;
 	}
 
-	@Past
-	@NotNull
 	public void setStartDateStudy(final Date startDateStudy) {
 		this.startDateStudy = startDateStudy;
 	}
@@ -50,7 +47,6 @@ public class EducationRecord extends DomainEntity {
 		return this.endDateStudy;
 	}
 
-	@Past
 	public void setEndDateStudy(final Date endDateStudy) {
 		this.endDateStudy = endDateStudy;
 	}
@@ -60,7 +56,6 @@ public class EducationRecord extends DomainEntity {
 		return this.institution;
 	}
 
-	@NotBlank
 	public void setInstitution(final String institution) {
 		this.institution = institution;
 	}
@@ -70,7 +65,6 @@ public class EducationRecord extends DomainEntity {
 		return this.url;
 	}
 
-	@URL
 	public void setUrl(final String url) {
 		this.url = url;
 	}
@@ -80,7 +74,6 @@ public class EducationRecord extends DomainEntity {
 		return this.comments;
 	}
 
-	@Valid
 	public void setComments(final List<String> comments) {
 		this.comments = comments;
 	}
