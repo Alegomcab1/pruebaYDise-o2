@@ -22,7 +22,6 @@ public class MiscellaneousRecord extends DomainEntity {
 		return this.title;
 	}
 
-	@NotBlank
 	public void setTitle(final String title) {
 		this.title = title;
 	}
@@ -32,7 +31,6 @@ public class MiscellaneousRecord extends DomainEntity {
 		return this.linkAttachement;
 	}
 
-	@URL
 	public void setLinkAttachement(final String linkAttachement) {
 		this.linkAttachement = linkAttachement;
 	}
@@ -42,7 +40,6 @@ public class MiscellaneousRecord extends DomainEntity {
 		return this.comments;
 	}
 
-	@Valid
 	public void setComments(final List<String> comments) {
 		this.comments = comments;
 	}

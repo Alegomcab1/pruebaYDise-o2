@@ -15,6 +15,7 @@ public class Box extends DomainEntity {
 	private String			name;
 	private Boolean			isSystem;
 	private Box				fatherBox;
+
 	private List<Message>	messages;
 
 
@@ -23,7 +24,6 @@ public class Box extends DomainEntity {
 		return this.messages;
 	}
 
-	@Valid
 	public void setMessages(final List<Message> messages) {
 		this.messages = messages;
 	}
@@ -33,7 +33,6 @@ public class Box extends DomainEntity {
 		return this.fatherBox;
 	}
 
-	@Valid
 	public void setFatherBox(final Box fatherBox) {
 		this.fatherBox = fatherBox;
 	}
@@ -43,7 +42,6 @@ public class Box extends DomainEntity {
 		return this.name;
 	}
 
-	@NotBlank
 	public void setName(final String name) {
 		this.name = name;
 	}
@@ -53,7 +51,6 @@ public class Box extends DomainEntity {
 		return this.isSystem;
 	}
 
-	@NotNull
 	public void setIsSystem(final Boolean isSystem) {
 		this.isSystem = isSystem;
 	}

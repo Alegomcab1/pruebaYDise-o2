@@ -22,7 +22,6 @@ public class PersonalRecord extends DomainEntity {
 		return this.fullName;
 	}
 
-	@NotBlank
 	public void setFullName(final String fullName) {
 		this.fullName = fullName;
 	}
@@ -33,8 +32,6 @@ public class PersonalRecord extends DomainEntity {
 		return this.photo;
 	}
 
-	@NotBlank
-	@URL
 	public void setPhoto(final String photo) {
 		this.photo = photo;
 	}
@@ -45,8 +42,6 @@ public class PersonalRecord extends DomainEntity {
 		return this.email;
 	}
 
-	@Email
-	@NotBlank
 	public void setEmail(final String email) {
 		this.email = email;
 	}
@@ -56,7 +51,6 @@ public class PersonalRecord extends DomainEntity {
 		return this.phoneNumber;
 	}
 
-	@NotBlank
 	public void setPhoneNumber(final String phoneNumber) {
 		this.phoneNumber = phoneNumber;
 	}
@@ -67,8 +61,6 @@ public class PersonalRecord extends DomainEntity {
 		return this.urlLinkedInProfile;
 	}
 
-	@NotBlank
-	@URL
 	public void setUrlLinkedInProfile(final String urlLinkedInProfile) {
 		this.urlLinkedInProfile = urlLinkedInProfile;
 	}
