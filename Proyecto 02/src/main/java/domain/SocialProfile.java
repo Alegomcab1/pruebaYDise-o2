@@ -14,6 +14,9 @@ public class SocialProfile extends DomainEntity {
 	private String	profileLink;
 
 
+	public SocialProfile() {		//Created for Json purposes
+		super();
+	}
 	@NotBlank
 	public String getNick() {
 		return this.nick;
