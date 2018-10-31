@@ -17,6 +17,9 @@ public class MiscellaneousRecord extends DomainEntity {
 	private List<String>	comments;
 
 
+	public MiscellaneousRecord() {		//Created for Json Purposes
+		super();
+	}
 	@NotBlank
 	public String getTitle() {
 		return this.title;

@@ -23,6 +23,10 @@ public class EducationRecord extends DomainEntity {
 	private List<String>	comments;
 
 
+	public EducationRecord() {		//Created for Json Purposes
+		super();
+	}
+
 	@NotBlank
 	public String getTitle() {
 		return this.title;

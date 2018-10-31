@@ -24,6 +24,10 @@ public class ProfessionalRecord extends DomainEntity {
 	private List<String>	comments;
 
 
+	public ProfessionalRecord() {		//Created for Json Purposes
+		super();
+	}
+
 	@NotBlank
 	public String getNameCompany() {
 		return this.nameCompany;

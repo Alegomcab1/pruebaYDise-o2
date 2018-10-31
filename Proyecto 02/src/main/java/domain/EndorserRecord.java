@@ -20,6 +20,10 @@ public class EndorserRecord extends DomainEntity {
 	private List<String>	comments;
 
 
+	public EndorserRecord() {		//Created for Json Purposes
+		super();
+	}
+
 	@NotBlank
 	public String getFullName() {
 		return this.fullName;
